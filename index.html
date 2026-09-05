@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🤖 ChatGPT + 🔒 Ethical Hacking Tools</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="logo">
+                <h2>🛡️ SecureChat</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#" class="nav-link active" data-section="chat">💬 ChatGPT</a></li>
+                <li><a href="#" class="nav-link" data-section="tools">🔧 الأدوات</a></li>
+                <li><a href="#" class="nav-link" data-section="password">🔐 فحص كلمات المرور</a></li>
+                <li><a href="#" class="nav-link" data-section="scanner">📡 Port Scanner</a></li>
+                <li><a href="#" class="nav-link" data-section="hash">#️⃣ Hash Generator</a></li>
+                <li><a href="#" class="nav-link" data-section="encoder">🔤 Encoder/Decoder</a></li>
+                <li><a href="#" class="nav-link" data-section="about">ℹ️ معلومات</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <h1>🤖 ChatGPT + 🔒 أدوات Ethical Hacking</h1>
+                <p>تطبيق آمن وقانوني لاختبار الأمان والذكاء الاصطناعي</p>
+            </header>
+
+            <!-- Chat Section -->
+            <section id="chat" class="section active">
+                <div class="chat-container">
+                    <div class="chat-messages" id="chatMessages"></div>
+                    <div class="chat-input-area">
+                        <input type="text" id="chatInput" placeholder="اكتب سؤالك..." />
+                        <button onclick="sendMessage()">إرسال ➜</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tools Section -->
+            <section id="tools" class="section">
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <h3>🔐 فحص كلمات المرور</h3>
+                        <p>تحليل قوة كلمة المرور</p>
+                    </div>
+                    <div class="tool-card">
+                        <h3>📡 Port Scanner</h3>
+                        <p>فحص المنافذ المفتوحة</p>
+                    </div>
+                    <div class="tool-card">
+                        <h3>#️⃣ Hash Generator</h3>
+                        <p>توليد Hash من النصوص</p>
+                    </div>
+                    <div class="tool-card">
+                        <h3>🔤 Encoder/Decoder</h3>
+                        <p>تشفير وفك تشفير النصوص</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Password Checker Section -->
+            <section id="password" class="section">
+                <div class="tool-section">
+                    <h2>🔐 فحص قوة كلمة المرور</h2>
+                    <div class="password-checker">
+                        <input type="password" id="passwordInput" placeholder="أدخل كلمة المرور..." />
+                        <button onclick="checkPassword()">فحص الآن</button>
+                        <div id="passwordResult" class="result"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Port Scanner Section -->
+            <section id="scanner" class="section">
+                <div class="tool-section">
+                    <h2>📡 فحص المنافذ (Port Scanner)</h2>
+                    <p class="info">⚠️ استخدم فقط على الأنظمة التي تملكها أو لديك إذن فيها</p>
+                    <div class="port-scanner">
+                        <input type="text" id="hostInput" placeholder="أدخل عنوان IP أو Domain..." />
+                        <button onclick="scanPorts()">ابدأ الفحص</button>
+                        <div id="scannerResult" class="result"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Hash Generator Section -->
+            <section id="hash" class="section">
+                <div class="tool-section">
+                    <h2>#️⃣ توليد Hash</h2>
+                    <div class="hash-generator">
+                        <textarea id="hashInput" placeholder="أدخل النص..."></textarea>
+                        <div class="hash-buttons">
+                            <button onclick="generateHash('md5')">MD5</button>
+                            <button onclick="generateHash('sha1')">SHA1</button>
+                            <button onclick="generateHash('sha256')">SHA256</button>
+                        </div>
+                        <div id="hashResult" class="result"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Encoder/Decoder Section -->
+            <section id="encoder" class="section">
+                <div class="tool-section">
+                    <h2>🔤 Encoder/Decoder</h2>
+                    <div class="encoder-decoder">
+                        <textarea id="encoderInput" placeholder="أدخل النص..."></textarea>
+                        <div class="encoder-buttons">
+                            <button onclick="encodeBase64()">Base64 Encode</button>
+                            <button onclick="decodeBase64()">Base64 Decode</button>
+                            <button onclick="encodeURL()">URL Encode</button>
+                            <button onclick="decodeURL()">URL Decode</button>
+                        </div>
+                        <div id="encoderResult" class="result"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about" class="section">
+                <div class="about-content">
+                    <h2>ℹ️ عن هذا التطبيق</h2>
+                    <div class="about-text">
+                        <h3>🛡️ SecureChat</h3>
+                        <p>تطبيق ويب متكامل يجمع بين:</p>
+                        <ul>
+                            <li><strong>💬 ChatGPT:</strong> محادثة ��كية مع Ollama</li>
+                            <li><strong>🔒 أدوات Ethical Hacking:</strong> أدوات آمنة وقانونية لاختبار الأمان</li>
+                        </ul>
+                        
+                        <h3>⚠️ تحذير قانوني</h3>
+                        <p>هذه الأدوات مخصصة فقط للاستخدام الشرعي والقانوني:</p>
+                        <ul>
+                            <li>✅ اختبار أمان أنظمتك الخاصة</li>
+                            <li>✅ التعليم والتدريب</li>
+                            <li>✅ البحث الأمني بإذن</li>
+                            <li>❌ اختراق الأنظمة الأخرى</li>
+                            <li>❌ سرقة البيانات</li>
+                            <li>❌ الأنشطة غير القانونية</li>
+                        </ul>
+
+                        <h3>🔐 الخصوصية والأمان</h3>
+                        <ul>
+                            <li>✅ جميع البيانات محلية على جهازك</li>
+                            <li>✅ لا توجد بيانات تُرسل لخادم خارجي (ما عدا ChatGPT)</li>
+                            <li>✅ لا نحفظ كلمات مرورك</li>
+                            <li>✅ لا إعلانات</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
